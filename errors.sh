@@ -1,14 +1,12 @@
 #!/bin/bash
 
-# Pole hlášek pro standardní výstup
 OK_HLASKY=(
   "Operace proběhla úspěšně."
   "Vše je v pořádku."
-  "Skript byl dokončen bez chyb."
-  "Data byla správně zpracována."
+  "Skript běží bez problémů."
+  "Data byla úspěšně zpracována."
 )
 
-# Pole hlášek pro chybový výstup
 ERR_HLASKY=(
   "Došlo k chybě při zpracování."
   "Soubor nebyl nalezen."
@@ -16,15 +14,17 @@ ERR_HLASKY=(
   "Nastala neočekávaná chyba."
 )
 
-# Náhodné rozhodnutí: 0 = stdout, 1 = stderr
-VYSTUP=$((RANDOM % 2))
+while true; do
+  # 0 = stdout, 1 = stderr
+  VYSTUP=$((RANDOM % 2))
 
-if [ "$VYSTUP" -eq 0 ]; then
-  # Náhodná hláška na stdout
-  INDEX=$((RANDOM % ${#OK_HLASKY[@]}))
-  echo "${OK_HLASKY[$INDEX]}"
-else
-  # Náhodná hláška na stderr
-  INDEX=$((RANDOM % ${#ERR_HLASKY[@]}))
-  echo "${ERR_HLASKY[$INDEX]}" >&2
-fi
+  if [ "$VYSTUP" -eq 0 ]; then
+    INDEX=$((RANDOM % ${#OK_HLASKY[@]}))
+    echo "${OK_HLASKY[$INDEX]}"
+  else
+    INDEX=$((RANDOM % ${#ERR_HLASKY[@]}))
+    echo "${ERR_HLASKY[$INDEX]}" >&2
+  fi
+
+  sleep 10
+done
