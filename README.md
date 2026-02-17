@@ -194,3 +194,14 @@ Poté:
 - stdin, stdout a stderr lze přesměrovávat podle potřeby
 
 ---
+
+## Cičení 
+Vyzkoušejte následující příkazy a sledujte jednotlivé výstupy:
+```bash
+./errors.sh 1> vystup.txt
+./errors.sh 2> chyby.txt
+./errors.sh > /dev/null
+./errors.sh 2> /dev/null
+./errors.sh &> vse.txt
+```
+
