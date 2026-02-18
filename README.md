@@ -126,6 +126,7 @@ příkaz1 && příkaz2 || příkaz3
 - Pokud `příkaz1` selže → provede se `příkaz3`
 
 **Příklad:**
+
 ```bash
 rm soubor && echo "Soubor byl úspěšně odstraněn." || echo "Soubor nebyl odstraněn."
 ```
@@ -138,10 +139,11 @@ Napiš příkaz, který:
 - při úspěchu vypíše hlášení o smazání,
 - při neúspěchu vypíše chybovou zprávu.
 - ls na složku a posléze na složku, která neexistuje. Vypiš ok, případně chyba pokud příkaz ls selhal.
+
 ```bash
 rm err.log && echo "Smazáno..." || echo "CHYBA"
 ls test && echo "OK" || echo "CHYBA"
-```bash
+```
 ---
 
 ## 4. Standardní vstup, výstup a chybový výstup
