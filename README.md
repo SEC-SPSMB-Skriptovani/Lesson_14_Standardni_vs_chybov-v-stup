@@ -137,7 +137,11 @@ Napiš příkaz, který:
 - zkusí odstranit soubor `test.txt`,
 - při úspěchu vypíše hlášení o smazání,
 - při neúspěchu vypíše chybovou zprávu.
-
+- ls na složku a posléze na složku, která neexistuje. Vypiš ok, případně chyba pokud příkaz ls selhal.
+```bash
+rm err.log && echo "Smazáno..." || echo "CHYBA"
+ls test && echo "OK" || echo "CHYBA"
+```bash
 ---
 
 ## 4. Standardní vstup, výstup a chybový výstup
@@ -177,7 +181,10 @@ Při spuštění každého programu vznikají tři standardní datové proudy:
 ### Úkol 4
 Vyzkoušej příkaz:
 ```bash
-ls neexistuje
+./errors.sh 1> log.log
+./errors.sh 2> err.log
+./errors.sh 1> log.log 2> err.log
+
 ```
 
 Poté:
