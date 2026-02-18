@@ -204,7 +204,7 @@ Poté:
 
 ---
 
-## Cičení 
+## Cvičení 
 Vyzkoušejte následující příkazy a sledujte jednotlivé výstupy:
 ```bash
 ./errors.sh 1> vystup.txt
