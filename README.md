@@ -142,7 +142,7 @@ Napiš příkaz, který:
 
 ```bash
 rm err.log && echo "Smazáno..." || echo "CHYBA"
-ls test && echo "OK" || echo "CHYBA"
+ls /home/student/test && echo "OK" || echo "CHYBA"
 ```
 ---
 
